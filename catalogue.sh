@@ -11,19 +11,19 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 .... $R FAILED $N"
+        echo -e "$2 .... $R FAILED $N"
     else
-        echo "$2 .... $G SUCCESS $N"
+        echo -e "$2 .... $G SUCCESS $N"
     fi
 
 }
 
 if [ $ID -ne 0 ]
 then
-    echo "$R ERROR:: you are not a root user $N"
+    echo -e "$R ERROR:: you are not a root user $N"
     exit 1
 else
-    echo "$G you are a root user $N"
+    echo -e "$G you are a root user $N"
 fi
 
 dnf module disable nodejs -y &>> LOGFILE
