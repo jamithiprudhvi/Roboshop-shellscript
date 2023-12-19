@@ -11,19 +11,19 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e"$2....$R FAILED $N"
+        echo -e "$2....$R FAILED $N"
         exit 1
     else
-        echo -e"$2....$G SUCCESS $N"
+        echo -e "$2....$G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then
-    echo -e"$R ERROR:: YOU ARE NOT A ROOT USER $N"
+    echo -e "$R ERROR:: YOU ARE NOT A ROOT USER $N"
     exit 1
 else
-    echo -e"$G YOU ARE A ROOT USER $N"
+    echo -e "$G YOU ARE A ROOT USER $N"
 fi
 
 dnf module disable nodejs -y &>> $LOGFILE
@@ -43,7 +43,7 @@ then
     useradd roboshop &>> $LOGFILE
     VALIDATE $? "creating roboshop user"
 else
-    echo -e"roboshop user already exists $Y SKIPPING $N"
+    echo -e "roboshop user already exists $Y SKIPPING $N"
 fi
 
 mkdir -p /app &>> $LOGFILE
