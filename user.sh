@@ -12,10 +12,9 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 VALIDATE(){
     if[ $1 -ne 0 ]
     then 
-        echo "$2....$R FAILED $N"
-        exit 1
+        echo -e "$2....$R FAILED $N"
     else
-        echo "$2....$G SUCCESS $N"
+        echo -e "$2....$G SUCCESS $N"
     fi
 }
 
