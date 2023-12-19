@@ -19,6 +19,13 @@ VALIDATE(){
     fi
 }
 
+if [ $ID - ne 0 ]
+then
+    echo "$R ERROR:: Run this script with root user $N"
+else
+    echo "$G You are a root user $N"
+fi
+
 dnf module disable nodejs -y &>> $LOGFILE
 
 VALIDATE $? "Disabling nodejs"
