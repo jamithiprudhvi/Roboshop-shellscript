@@ -38,11 +38,16 @@ dnf install nodejs -y &>> LOGFILE
 
 VALIDATE $? "nodejs Installed" 
 
-useradd roboshop &>> LOGFILE
+id roboshop  # roboshop user does not exit , then it is failure
+if [ $? -ne 0 ]
+then
+    useradd roboshop &>> LOGFILE
+    VALIDATE $? "user roboshop creation"
+else
+    echo -e "roboshop user already exists $Y SKIPPING $N"
+fi
 
-VALIDATE $? "creating roboshop user" 
-
-mkdir /app &>> LOGFILE
+mkdir -p /app &>> LOGFILE
 
 VALIDATE $? "creating app Directory" 
 
