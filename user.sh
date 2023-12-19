@@ -62,7 +62,7 @@ then
     unzip /tmp/user.zip &>> LOGFILE
     VALIDATE $? "unzipping userfile"
 else
-    echo "Unzip alreadu done"
+    echo -e "Unzip already done .... $Y SKIPPING $N"
 fi
 
 
