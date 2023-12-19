@@ -60,7 +60,7 @@ npm install &>> LOGFILE
 
 VALIDATE $? "Installing npm"
 
-cp /home/centos/user.service /etc/systemd/system/user.service &>> LOGFILE
+cp /home/centos/Roboshop-shellscript/user.service /etc/systemd/system/user.service &>> LOGFILE
 
 VALIDATE $? "copying user.service"
 
@@ -76,7 +76,7 @@ systemctl start user &>> LOGFILE
 
 VALIDATE $? "user starting"
 
-cp /home/centos/mongo.repo /etc/yum.repos.d/mongo.repo &>> LOGFILE
+cp /home/centos/Roboshop-shellscript/mongo.repo /etc/yum.repos.d/mongo.repo &>> LOGFILE
 
 VALIDATE $? "copying mongo.repo"
 
