@@ -21,9 +21,9 @@ VALIDATE(){
 
 if [ $ID - ne 0 ]
 then
-    echo "$R ERROR:: Run this script with root user $N"
+    echo -e"$R ERROR:: Run this script with root user $N"
 else
-    echo "$G You are a root user $N"
+    echo -e"$G You are a root user $N"
 fi
 
 dnf module disable nodejs -y &>> $LOGFILE
@@ -57,9 +57,15 @@ VALIDATE $? "Downloading user application"
 
 cd /app &>> $LOGFILE
 
-unzip /tmp/user.zip &>> LOGFILE
+if [ $? -ne 0 ]
+then 
+    unzip /tmp/user.zip &>> LOGFILE
+    VALIDATE $? "unzipping userfile"
+else
+    echo "Unzip alreadu done"
+fi
 
-VALIDATE $? "unzipping userfile"
+
 
 cd /app &>> LOGFILE
 
