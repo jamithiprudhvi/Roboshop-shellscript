@@ -19,11 +19,11 @@ VALIDATE(){
     fi
 }
 
-if [ $ID - ne 0 ]
+if [ $? - ne 0 ]
 then
-    echo -e"$R ERROR:: Run this script with root user $N"
+    echo -e "$R ERROR:: Run this script with root user $N"
 else
-    echo -e"$G You are a root user $N"
+    echo -e "$G You are a root user $N"
 fi
 
 dnf module disable nodejs -y &>> $LOGFILE
