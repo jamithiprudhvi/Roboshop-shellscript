@@ -19,7 +19,7 @@ VALIDATE(){
     fi
 }
 
-if [ $? - ne 0 ]
+if [ $? -ne 0 ]
 then
     echo -e "$R ERROR:: Run this script with root user $N"
 else
