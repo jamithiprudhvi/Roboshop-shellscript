@@ -56,6 +56,8 @@ VALIDATE $? "unzipping shipping application"
 
 cd /app &>> $LOGFILE
 
+VALIDATE $? "Moving to app directory"
+
 mvn clean package &>> $LOGFILE
 
 VALIDATE $? "cleaning mvn packages"
