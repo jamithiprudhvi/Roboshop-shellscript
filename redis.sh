@@ -8,6 +8,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33"
 N="\e[0m"
+exec &>$LOGFILE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
