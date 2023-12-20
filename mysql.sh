@@ -54,3 +54,7 @@ VALIDATE $? "Setting root password"
 mysql -uroot -pRoboShop@1 &>> $LOGFILE
 
 VALIDATE $? "checking rootpassword"
+
+exit
+
+VALIDATE $? "exiting from mysql"
