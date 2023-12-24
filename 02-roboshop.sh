@@ -5,7 +5,7 @@ SG_ID=sg-0d0ec1361a0648bef
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
 
-for i in "${INSTANCES[@]}"
+for i in "${INSTANCE[@]}"
 do 
     echo "instance is: $i"
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
